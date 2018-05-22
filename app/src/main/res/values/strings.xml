@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">CollinEthanProject</string>
+    <string name="app_name">Hanover Trivia App</string>
+    <string name="trivia">Hanover Campus Trivia</string>
+    <string name="mode">Choose your difficulty</string>
+    <string name="normal">Normal</string>
+    <string name="easy">Easy</string>
+    <string name="start">Start Game</string>
 </resources>
