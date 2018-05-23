@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class QuestionActivity1 extends Activity {
 
@@ -38,11 +39,11 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice1.getText() == ans){
-                    updateQuestion();
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+                updateQuestion();
             }
 
         });
@@ -53,11 +54,11 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice2.getText() == ans){
-                    updateQuestion();
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+                updateQuestion();
             }
 
         });
@@ -67,11 +68,11 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice3.getText() == ans){
-                    updateQuestion();
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+                updateQuestion();
             }
 
         });
@@ -81,39 +82,35 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice4.getText() == ans){
-                    updateQuestion();
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+                updateQuestion();
             }
 
         });
 
 
-
-
-
-
-
-
     }
 
 
-
+    // Updates question and answers
     private void updateQuestion() {
-        questionView.setText(quesLib.getQuestion(questionNum));
-        choice1.setText(quesLib.getChoice1(questionNum));
-        choice2.setText(quesLib.getChoice2(questionNum));
-        choice3.setText(quesLib.getChoice3(questionNum));
-        choice4.setText(quesLib.getChoice4(questionNum));
+        if (questionNum == 4) {
+            Intent intent = new Intent(QuestionActivity1.this, FinalActivity.class);
+            startActivity(intent);
+        } else {
 
-        ans = quesLib.answer(questionNum);
-        questionNum++;
+            questionView.setText(quesLib.getQuestion(questionNum));
+            choice1.setText(quesLib.getChoice1(questionNum));
+            choice2.setText(quesLib.getChoice2(questionNum));
+            choice3.setText(quesLib.getChoice3(questionNum));
+            choice4.setText(quesLib.getChoice4(questionNum));
 
-
-
-
+            ans = quesLib.answer(questionNum);
+            questionNum++;
+        }
     }
 
 }

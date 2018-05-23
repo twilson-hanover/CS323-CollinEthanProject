@@ -16,9 +16,9 @@
     <string name="hint4">H4</string>
 
     <array name="Question1">
-        <item>Answer1-1 </item>
-        <item>Answer1-2 </item>
-        <item>Answer1-3 </item>
-        <item>Answer1-4 </item>
+        <item>Answer1-1</item>
+        <item>Answer1-2</item>
+        <item>Answer1-3</item>
+        <item>Answer1-4</item>
     </array>
 </resources>
