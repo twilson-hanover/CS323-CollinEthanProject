@@ -18,7 +18,7 @@ public class QuestionActivity1 extends Activity {
     private Button choice3;
     private Button choice4;
     private String ans;
-    private int scoreView = 0;
+    public int scoreView = 0;
     private int questionNum = 0;
 
     @Override
@@ -39,6 +39,7 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice1.getText() == ans){
+                    scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
@@ -54,6 +55,7 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice2.getText() == ans){
+                    scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
@@ -68,6 +70,7 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice3.getText() == ans){
+                    scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
@@ -82,6 +85,7 @@ public class QuestionActivity1 extends Activity {
             @Override
             public void onClick(View view){
                 if (choice4.getText() == ans){
+                    scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
@@ -111,6 +115,10 @@ public class QuestionActivity1 extends Activity {
             ans = quesLib.answer(questionNum);
             questionNum++;
         }
+    }
+
+    public int getScoreView(){
+        return scoreView;
     }
 
 }
