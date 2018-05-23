@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuestionActivity1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp">
 
 
     <TextView
@@ -19,12 +23,13 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="190dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="125dp"
-        android:entries="@array/Question1"> </ListView>
+        android:layout_marginTop="80dp"
+        android:textAlignment="center"
+        android:entries="@array/Question1">
+    </ListView>
 
     <TextView
-        android:paddingTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
