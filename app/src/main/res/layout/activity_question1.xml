@@ -11,12 +11,18 @@
     android:paddingRight="16dp"
     android:paddingLeft="16dp">
 
+    <ImageView
+        android:id="@+id/questionimage"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/question1draw"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:text="@string/question1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal"/>
@@ -25,7 +31,7 @@
         android:id="@+id/choice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:text=""
         android:layout_gravity="center"/>
     <Button

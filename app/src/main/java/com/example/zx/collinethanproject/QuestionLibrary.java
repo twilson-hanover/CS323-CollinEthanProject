@@ -52,8 +52,18 @@ public class QuestionLibrary {
         return answercorrect;
     }
 
+    //array of drawables
+    private int[] drawables = {
+            R.drawable.question1draw,
+            R.drawable.question2draw,
+            R.drawable.question3draw,
+            R.drawable.question4draw,
+    };
 
-
-
+    //gets drawables
+    public int getdrawables(int x) {
+        int draw = drawables[x];
+        return draw;
+    }
 
 }

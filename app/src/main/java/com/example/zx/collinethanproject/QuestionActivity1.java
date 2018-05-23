@@ -1,9 +1,11 @@
 package com.example.zx.collinethanproject;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
@@ -101,6 +103,9 @@ public class QuestionActivity1 extends Activity {
             Intent intent = new Intent(QuestionActivity1.this, FinalActivity.class);
             startActivity(intent);
         } else {
+
+            ImageView image = (ImageView)findViewById(R.id.questionimage);
+            image.setImageResource(quesLib.getdrawables(questionNum));
 
             questionView.setText(quesLib.getQuestion(questionNum));
             choice1.setText(quesLib.getChoice1(questionNum));
