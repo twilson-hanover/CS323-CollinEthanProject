@@ -1,7 +1,10 @@
 package com.example.zx.collinethanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class TopLevelActivity extends Activity {
 
@@ -10,4 +13,13 @@ public class TopLevelActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_level);
     }
+
+    public void startGame(View v){
+        Intent intent = new Intent(TopLevelActivity.this, QuestionActivity1.class);
+        startActivity(intent);
+    }
+
+
+
+
 }
