@@ -20,13 +20,34 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal"/>
 
-    <ListView
+    <Button
+        android:id="@+id/choice1"
         android:layout_width="wrap_content"
-        android:layout_height="190dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/choice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:entries="@array/Question1">
-    </ListView>
+        android:layout_gravity="center"
+        android:text=""/>
+    <Button
+        android:id="@+id/choice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:text=""/>
+    <Button
+        android:id="@+id/choice4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:text=""/>
 
     <TextView
         android:layout_marginTop="50dp"
