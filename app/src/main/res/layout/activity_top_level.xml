@@ -25,16 +25,26 @@
         android:text="@string/mode"
         android:layout_gravity="center"/>
 
-    <RadioButton
+    <RadioGroup
+        android:id="@+id/difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/easy"
-        android:layout_gravity="center_horizontal"/>
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/normal"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/easy" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/normal" />
+
+    </RadioGroup>
+
 
     <Button
         android:id="@+id/start"
