@@ -107,6 +107,7 @@ public class QuestionActivity1 extends Activity {
             Intent intent = new Intent(QuestionActivity1.this, FinalActivity.class);
             intent.putExtra("scoreView",scoreView);
             startActivity(intent);
+            QuestionActivity1.this.finish();
         } else {
 
             ImageView image = (ImageView)findViewById(R.id.questionimage);
