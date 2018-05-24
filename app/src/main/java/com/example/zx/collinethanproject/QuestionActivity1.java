@@ -25,11 +25,14 @@ public class QuestionActivity1 extends Activity {
     private String ans;
     public int scoreView = 0;
     private int questionNum = 0;
+    private boolean answered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question1);
+
+
 
         questionView = (TextView)findViewById(R.id.question);
         choice1 = (Button)findViewById(R.id.choice1);
@@ -40,19 +43,30 @@ public class QuestionActivity1 extends Activity {
         difficultyEasy = intent.getBooleanExtra("Easy",false);
         hint = (TextView)findViewById(R.id.questionHint);
 
+
+
+        if (savedInstanceState == null) {
+            scoreView = intent.getIntExtra("scoreView",0);
+            questionNum = intent.getIntExtra("questionNum",0);
+        } else {
+            scoreView = savedInstanceState.getInt("scoreView");
+            questionNum = savedInstanceState.getInt("questionNum");
+        }
         updateQuestion();
 
         //Button Listener for Button 1
         choice1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if (choice1.getText() == ans){
+
+                if (choice1.getText() == ans && answered){
                     scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (choice1.getText() != ans){
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
                 updateQuestion();
+
             }
 
         });
@@ -60,15 +74,20 @@ public class QuestionActivity1 extends Activity {
 
         //Button Listener for Button 2
         choice2.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view){
-                if (choice2.getText() == ans){
+                answered = true;
+                if (choice2.getText() == ans && answered){
                     scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (choice2.getText() != ans){
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+
                 updateQuestion();
+
+
             }
 
         });
@@ -77,12 +96,14 @@ public class QuestionActivity1 extends Activity {
         choice3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if (choice3.getText() == ans){
+                answered = true;
+                if (choice3.getText() == ans && answered){
                     scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (choice3.getText() != ans){
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
+
                 updateQuestion();
             }
 
@@ -92,10 +113,11 @@ public class QuestionActivity1 extends Activity {
         choice4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if (choice4.getText() == ans){
+                answered = true;
+                if (choice4.getText() == ans && answered){
                     scoreView+=1;
                     Toast.makeText(QuestionActivity1.this, "Correct!", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (choice4.getText() != ans){
                     Toast.makeText(QuestionActivity1.this, "Wrong!", Toast.LENGTH_SHORT).show();
                 }
                 updateQuestion();
@@ -106,10 +128,21 @@ public class QuestionActivity1 extends Activity {
 
     }
 
+    @Override
+    public void onSaveInstanceState (Bundle savedInstanceState) {
+        savedInstanceState.putInt("questionNum",questionNum);
+        savedInstanceState.putInt("scoreView", scoreView);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
+
 
     // Updates question and answers
     private void updateQuestion() {
         if (questionNum == 4) {
+            answered = true;
             Intent intent = new Intent(QuestionActivity1.this, FinalActivity.class);
             intent.putExtra("scoreView",scoreView);
             startActivity(intent);
@@ -133,7 +166,11 @@ public class QuestionActivity1 extends Activity {
             choice4.setText(quesLib.getChoice4(questionNum));
 
             ans = quesLib.answer(questionNum);
-            questionNum++;
+            if (answered == true) {
+                questionNum++;
+            }
+            answered = false;
+
         }
     }
 
