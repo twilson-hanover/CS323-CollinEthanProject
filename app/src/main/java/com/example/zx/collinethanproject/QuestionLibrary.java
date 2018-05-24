@@ -22,6 +22,9 @@ public class QuestionLibrary {
     private String correct[] = {"1827","1974","Parker","Lynn"
     };
 
+    //String of hints
+    private String hints[] = {"Think low", "It did happen in the last 50 years","I would not park here without a permit", "Between FOB and Crowe"};
+
     //Function for getting questions
     public String getQuestion(int x){
         String q = questions[x];
@@ -64,6 +67,11 @@ public class QuestionLibrary {
     public int getdrawables(int x) {
         int draw = drawables[x];
         return draw;
+    }
+
+    //get hints
+    public String getHint(int x){
+        return hints[x];
     }
 
 }

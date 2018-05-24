@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
@@ -14,6 +15,8 @@ public class QuestionActivity1 extends Activity {
 
     private QuestionLibrary quesLib = new QuestionLibrary();
 
+    private TextView hint;
+    private boolean difficultyEasy;
     private TextView questionView;
     private Button choice1;
     private Button choice2;
@@ -33,6 +36,9 @@ public class QuestionActivity1 extends Activity {
         choice2 = (Button)findViewById(R.id.choice2);
         choice3 = (Button)findViewById(R.id.choice3);
         choice4 = (Button)findViewById(R.id.choice4);
+        Intent intent = getIntent();
+        difficultyEasy = intent.getBooleanExtra("Easy",false);
+        hint = (TextView)findViewById(R.id.questionHint);
 
         updateQuestion();
 
@@ -109,6 +115,13 @@ public class QuestionActivity1 extends Activity {
             startActivity(intent);
             QuestionActivity1.this.finish();
         } else {
+
+            if (difficultyEasy) {
+                hint.setText(quesLib.getHint(questionNum));
+            }
+            else {
+                hint.setText("");
+            }
 
             ImageView image = (ImageView)findViewById(R.id.questionimage);
             image.setImageResource(quesLib.getdrawables(questionNum));

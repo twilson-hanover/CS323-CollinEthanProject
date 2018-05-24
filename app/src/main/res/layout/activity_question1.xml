@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/question1"
+        android:text="@string/question"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal"/>
 
@@ -57,11 +57,12 @@
         android:text=""/>
 
     <TextView
+        android:id="@+id/questionHint"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/hint1"
+        android:text="@string/hint"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

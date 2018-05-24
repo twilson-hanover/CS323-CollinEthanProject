@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+
 public class FinalActivity extends Activity {
 
     private TextView score;
@@ -20,4 +21,5 @@ public class FinalActivity extends Activity {
         score.setText("You got "+finalScore+" out of 4 correct!");
 
     }
+
 }

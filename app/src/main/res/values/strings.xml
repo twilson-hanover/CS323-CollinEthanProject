@@ -6,12 +6,12 @@
     <string name="easy">Easy</string>
     <string name="start">Start Game</string>
     <string name="title_activity_question1">QuestionActivity1</string>
-    <string name="question1">Q1</string>
-    <string name="hint1">H1</string>
+    <string name="question">Q</string>
+    <string name="hint">H</string>
     <string name="action_settings">Settings</string>
 
     <array name="info">
-        <item>Leave a review!</item>
+        <item>Play again!</item>
         <item>App information</item>
     </array>
 </resources>
