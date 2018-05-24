@@ -3,8 +3,10 @@ package com.example.zx.collinethanproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Toolbar;
+import android.view.MenuItem;
 
 public class TopLevelActivity extends Activity {
 
@@ -21,6 +23,10 @@ public class TopLevelActivity extends Activity {
     }
 
 
-
-
+    //Inflate the menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
