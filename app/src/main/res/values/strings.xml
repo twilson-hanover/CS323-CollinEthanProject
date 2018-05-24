@@ -7,18 +7,5 @@
     <string name="start">Start Game</string>
     <string name="title_activity_question1">QuestionActivity1</string>
     <string name="question1">Q1</string>
-    <string name="question2">Q2</string>
-    <string name="question3">Q3</string>
-    <string name="question4">Q4</string>
     <string name="hint1">H1</string>
-    <string name="hint2">H2</string>
-    <string name="hint3">H3</string>
-    <string name="hint4">H4</string>
-
-    <array name="Question1">
-        <item>Answer1-1</item>
-        <item>Answer1-2</item>
-        <item>Answer1-3</item>
-        <item>Answer1-4</item>
-    </array>
 </resources>
