@@ -1,18 +1,23 @@
 package com.example.zx.collinethanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class FinalActivity extends Activity {
-    private QuestionActivity1 ques1 = new QuestionActivity1();
+
+    private TextView score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        int finalScore = intent.getIntExtra("scoreView",0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
-        int score = ques1.getScoreView();
-        TextView text = new TextView(this);
-        text.setText(Integer.toString(score));
+
+        score = (TextView)findViewById(R.id.score);
+        score.setText("You got "+finalScore+" out of 4 correct!");
+
     }
 }

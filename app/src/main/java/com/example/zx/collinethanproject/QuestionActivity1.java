@@ -52,7 +52,7 @@ public class QuestionActivity1 extends Activity {
         });
 
 
-        //Button Listener for Button 1
+        //Button Listener for Button 2
         choice2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -67,7 +67,7 @@ public class QuestionActivity1 extends Activity {
 
         });
 
-        //Button Listener for Button 1
+        //Button Listener for Button 3
         choice3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -82,7 +82,7 @@ public class QuestionActivity1 extends Activity {
 
         });
 
-        //Button Listener for Button 1
+        //Button Listener for Button 4
         choice4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -105,6 +105,7 @@ public class QuestionActivity1 extends Activity {
     private void updateQuestion() {
         if (questionNum == 4) {
             Intent intent = new Intent(QuestionActivity1.this, FinalActivity.class);
+            intent.putExtra("scoreView",scoreView);
             startActivity(intent);
         } else {
 

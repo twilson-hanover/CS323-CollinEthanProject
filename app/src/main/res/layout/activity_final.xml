@@ -10,6 +10,11 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="156dp"
+        android:text="Pototo Salad"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
